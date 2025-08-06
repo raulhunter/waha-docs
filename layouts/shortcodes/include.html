@@ -1,8 +1,0 @@
-{{ $path := .Get "file" }}
-{{ $content := readFile $path }}
-{{ if not $content }}
-{{ errorf "'include' shortcode error: file %q not found or is empty" $path }}
-{{ else }}
-{{ $content | markdownify }}
-{{ end }}
-
